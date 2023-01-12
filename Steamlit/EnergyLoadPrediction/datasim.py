@@ -5,7 +5,7 @@ import time
 
 
 
-# Read data1
+# Read data dev
 file = "energydata_complete.csv"
 df = pd.read_csv(file)
 # Lowercase the column names
