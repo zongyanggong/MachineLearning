@@ -42,9 +42,11 @@ add_bg_from_local('CollegeAhuntsic_Logo.png')
 
 st.sidebar.header('Dashboard `Version 2`')
 
-client = pymongo.MongoClient("localhost")
-db = client.lorawan
-collection = db.livedata
+url = "mongodb+srv://zongyanggong:gongzy0122@cluster0.auf9spo.mongodb.net/?retryWrites=true&w=majority"
+# url ="mongodb+srv://toucanfortune:CEZG3Q2VBtLz@toucanfortune.gzo0glz.mongodb.net/?retryWrites=true&writeConcern=majority"
+client = pymongo.MongoClient(url)
+db = client.lihua_database
+collection = db.data_simulation
 
 df = pd.DataFrame(list(collection.find()))
 df = df.drop(['_id'], axis=1)
@@ -101,7 +103,7 @@ df_30min['high_consum'] = (df_30min.appliances+35>(df_30min.hour_avg))*1
 
 figure = plt.figure(figsize=(16,6))
 plt.plot(df_hour.appliances)
-plt.xticks( rotation='45')
+# plt.xticks( rotation='45')
 plt.xlabel('Date')
 plt.ylabel('Appliances consumption in Wh')
 st.header('Appliances consumption')

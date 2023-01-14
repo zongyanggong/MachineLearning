@@ -38,9 +38,11 @@ add_bg_from_local('CollegeAhuntsic_Logo.png')
 
 st.sidebar.header('Dashboard `Version 2`')
 
-client = pymongo.MongoClient("localhost")
-db = client.lorawan
-collection = db.livedata
+url = "mongodb+srv://zongyanggong:gongzy0122@cluster0.auf9spo.mongodb.net/?retryWrites=true&w=majority"
+# url ="mongodb+srv://toucanfortune:CEZG3Q2VBtLz@toucanfortune.gzo0glz.mongodb.net/?retryWrites=true&writeConcern=majority"
+client = pymongo.MongoClient(url)
+db = client.lihua_database
+collection = db.data_simulation
 placeholder = st.empty()
 
 while(True):

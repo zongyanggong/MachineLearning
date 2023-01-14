@@ -17,9 +17,13 @@ df = df[['date', 'appliances', 'lights', 't1', 'rh_1', 't_out', 'press_mm_hg', '
 
 init_record = 10000
 
-client = pymongo.MongoClient("localhost")
-db = client.lorawan
-collection = db.livedata
+
+url = "mongodb+srv://zongyanggong:gongzy0122@cluster0.auf9spo.mongodb.net/?retryWrites=true&w=majority"
+# url ="mongodb+srv://toucanfortune:CEZG3Q2VBtLz@toucanfortune.gzo0glz.mongodb.net/?retryWrites=true&writeConcern=majority"
+client = pymongo.MongoClient(url)
+db = client.lihua_database
+# db = client.get_database("database1")
+collection = db.data_simulation
 collection.drop()
 collection.insert_many(json.loads(df[:init_record].T.to_json()).values())
 
