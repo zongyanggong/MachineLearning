@@ -15,6 +15,10 @@ st.set_page_config(
     }
 )
 
+headers = {
+    "password": st.secrets["password"]
+}
+
 # with open('style.css') as f:
 #     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
@@ -38,7 +42,7 @@ st.set_page_config(
 
 st.sidebar.header('Dashboard `Version 2`')
 
-url = "mongodb+srv://zongyanggong:gongzy0122@cluster0.auf9spo.mongodb.net/?retryWrites=true&w=majority"
+url = f"mongodb+srv://zongyanggong:{headers.password}@cluster0.auf9spo.mongodb.net/?retryWrites=true&w=majority"
 # url ="mongodb+srv://toucanfortune:CEZG3Q2VBtLz@toucanfortune.gzo0glz.mongodb.net/?retryWrites=true&writeConcern=majority"
 client = pymongo.MongoClient(url)
 db = client.lihua_database
