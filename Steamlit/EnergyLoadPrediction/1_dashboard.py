@@ -9,7 +9,7 @@ import database as db
 import pandas as pd
 
 st.markdown("test")
-df = pd.DataFrame(list(db.fetch_all_periods()))
+# df = pd.DataFrame(list(db.fetch_all_periods()))
 # st.dataframe(df)
 # st.set_page_config(
 #     page_title="Dash board App",
