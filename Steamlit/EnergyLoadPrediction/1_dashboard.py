@@ -18,23 +18,23 @@ st.set_page_config(
 # with open('style.css') as f:
 #     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
-def add_bg_from_local(image_file):
-    with open(image_file, "rb") as image_file:
-        encoded_string = base64.b64encode(image_file.read())
-    st.markdown(
-    f"""
-    <style>
-    [data-testid="stSidebar"]  {{
-        background-image: url(data:image/{"png"};base64,{encoded_string.decode()});
-        background-size: 250px;
-        background-repeat: no-repeat;
-        background-position: 4px 20px;
-    }}
-    </style>
-    """,
-    unsafe_allow_html=True
-    )
-add_bg_from_local('CollegeAhuntsic_Logo.png')
+# def add_bg_from_local(image_file):
+#     with open(image_file, "rb") as image_file:
+#         encoded_string = base64.b64encode(image_file.read())
+#     st.markdown(
+#     f"""
+#     <style>
+#     [data-testid="stSidebar"]  {{
+#         background-image: url(data:image/{"png"};base64,{encoded_string.decode()});
+#         background-size: 250px;
+#         background-repeat: no-repeat;
+#         background-position: 4px 20px;
+#     }}
+#     </style>
+#     """,
+#     unsafe_allow_html=True
+#     )
+# add_bg_from_local('CollegeAhuntsic_Logo.png')
 
 st.sidebar.header('Dashboard `Version 2`')
 
